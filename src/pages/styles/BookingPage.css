@@ -1,0 +1,19 @@
+.booking-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+}
+.booking-result { min-height: 200px; }
+.found-label { font-family: var(--font-display); font-weight: 600; color: var(--gray); font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
+.btn-confirm { width: 100%; margin-top: 16px; justify-content: center; }
+.booking-hint {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 200px; background: white; border-radius: 20px;
+  border: 2px dashed #E5E5E5; color: var(--gray); font-size: 15px; text-align: center; padding: 24px;
+}
+.booking-confirmed {
+  background: white; border-radius: 20px; padding: 40px;
+  text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.confirmed-icon { font-size: 48px; margin-bottom: 12px; }
+.booking-confirmed h5 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.booking-confirmed p  { color: var(--gray); font-size: 15px; margin-bottom: 24px; }
+@media (max-width: 768px) { .booking-layout { grid-template-columns: 1fr; } }

@@ -1,0 +1,61 @@
+.booking-card {
+  background: white; border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden;
+  max-width: 520px; width: 100%;
+}
+.booking-card-header {
+  background: #0D0D0D; padding: 24px 28px;
+}
+.booking-card-header h4 {
+  font-family: var(--font-display); font-size: 20px;
+  font-weight: 800; color: var(--yellow); margin: 0;
+}
+.booking-card-body { padding: 28px; }
+ 
+.car-class-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.car-class-item {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 12px 8px; border: 2px solid #E5E5E5; border-radius: 12px;
+  cursor: pointer; transition: all 0.2s; text-align: center;
+}
+.car-class-item input[type='radio'] { display: none; }
+.car-class-item.active {
+  border-color: var(--yellow); background: var(--yellow-light);
+  box-shadow: 0 0 0 3px rgba(245,197,24,0.18);
+}
+.car-class-label-text { display: flex; flex-direction: column; gap: 2px; }
+.car-class-label-text strong { font-size: 13px; font-family: var(--font-display); }
+.car-class-label-text small { font-size: 11px; color: var(--gray); }
+ 
+.price-estimate-box {
+  background: var(--gray-light); border-radius: 12px;
+  padding: 14px 18px; margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.price-estimate-label { font-size: 13px; color: var(--gray); }
+.price-estimate-value { font-family: var(--font-display); font-size: 22px; font-weight: 800; }
+ 
+.w-100 { width: 100%; }
+
+/* --- DriverCard --- */
+.driver-card {
+  display: flex; align-items: center; gap: 16px;
+  background: white; border-radius: 16px;
+  padding: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin-top: 24px;
+}
+.driver-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--yellow); color: var(--dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: 800; font-family: var(--font-display);
+  flex-shrink: 0;
+}
+.driver-info { flex: 1; }
+.driver-info h5 { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin: 0 0 4px; }
+.driver-info p  { font-size: 14px; color: var(--gray); margin: 0; }
+.driver-plate   { font-family: 'Courier New', monospace; font-size: 13px; color: #333 !important; }
+.driver-meta    { text-align: right; display: flex; flex-direction: column; gap: 4px; }
+.driver-rating  { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--yellow-dark); }
+.driver-eta     { font-size: 13px; color: var(--gray); }
+.driver-trips   { font-size: 12px; color: #BDBDBD; }

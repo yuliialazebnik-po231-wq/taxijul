@@ -1,0 +1,50 @@
+.home-page { display: flex; flex-direction: column; }
+ 
+/* HERO */
+.hero-section {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: calc(100vh - 70px);
+  padding: 80px 80px 60px; gap: 40px;
+  background: linear-gradient(135deg, #0D0D0D 60%, #1A1A1A 100%);
+}
+.hero-content { max-width: 560px; }
+.hero-title {
+  font-size: clamp(36px, 5vw, 64px); font-weight: 800;
+  color: white; margin-bottom: 20px; line-height: 1.1;
+}
+.hero-accent { color: var(--yellow); display: block; }
+.hero-subtitle { font-size: 18px; color: rgba(255,255,255,0.65); margin-bottom: 36px; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-hero { font-size: 17px; padding: 16px 36px; }
+.btn-hero-sec { border-color: rgba(255,255,255,0.4); color: white; }
+.btn-hero-sec:hover { background: white; color: var(--dark); }
+.hero-visual { display: flex; align-items: center; justify-content: center; }
+.hero-car-emoji { font-size: 140px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5)); }
+ 
+/* FEATURES */
+.features-section { padding: 80px 24px; background: var(--gray-light); }
+.features-title { font-size: 36px; font-weight: 800; text-align: center; margin-bottom: 48px; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+.feature-card {
+  background: white; border-radius: 20px; padding: 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06); text-align: center;
+}
+.feature-icon { font-size: 36px; margin-bottom: 16px; }
+.feature-card h4 { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.feature-card p  { font-size: 14px; color: var(--gray); }
+ 
+/* CTA */
+.cta-section {
+  background: var(--yellow); padding: 80px 24px;
+  text-align: center;
+}
+.cta-section h2 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+.cta-section p  { font-size: 18px; margin-bottom: 32px; color: rgba(0,0,0,0.7); }
+.cta-section .btn-taxi { background: var(--dark); color: white; font-size: 17px; padding: 16px 40px; }
+.cta-section .btn-taxi:hover { background: #1A1A1A; }
+ 
+@media (max-width: 768px) {
+  .hero-section { flex-direction: column; padding: 40px 24px; text-align: center; }
+  .hero-actions { justify-content: center; }
+  .hero-visual { display: none; }
+}

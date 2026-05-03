@@ -1,0 +1,30 @@
+.ride-card {
+  background: white; border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  margin-bottom: 16px; overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.ride-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+ 
+.ride-route { padding: 20px 20px 0; }
+.ride-point { display: flex; align-items: flex-start; gap: 12px; }
+.ride-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 5px;
+}
+.ride-dot-from { background: var(--yellow); }
+.ride-dot-to   { background: var(--dark); }
+.ride-connector {
+  width: 2px; height: 20px; background: #E5E5E5;
+  margin: 4px 0 4px 4px;
+}
+.ride-point-label { font-size: 11px; color: var(--gray); margin: 0; text-transform: uppercase; letter-spacing: 0.5px; }
+.ride-point-addr  { font-size: 14px; font-weight: 500; margin: 0; }
+ 
+.ride-meta {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  padding: 16px 20px; border-top: 1px solid #F0F0F0; margin-top: 14px;
+}
+.ride-date   { font-size: 13px; color: var(--gray); margin: 0; }
+.ride-driver { font-size: 13px; color: var(--gray); margin: 2px 0 0; }
+.ride-class  { font-size: 12px; color: #BDBDBD; margin: 2px 0 0; }
+.ride-price  { font-family: var(--font-display); font-size: 20px; font-weight: 800; margin: 0 0 6px; text-align: right; }

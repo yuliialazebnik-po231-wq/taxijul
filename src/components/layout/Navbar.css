@@ -1,0 +1,36 @@
+.taxijul-navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: #0D0D0D !important; height: 70px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.taxijul-navbar .navbar-brand {
+  font-family: var(--font-display); font-size: 22px;
+  font-weight: 800; color: var(--yellow) !important;
+}
+.taxijul-navbar .nav-link {
+  font-family: var(--font-display); font-weight: 600; font-size: 14px;
+  color: rgba(255,255,255,0.75) !important; padding: 6px 14px !important;
+  border-radius: 8px; transition: color 0.2s, background 0.2s;
+}
+.taxijul-navbar .nav-link:hover,
+.taxijul-navbar .nav-link.active { color: var(--yellow) !important; background: rgba(245,197,24,0.1); }
+.btn-nav-cta {
+  background: var(--yellow); color: var(--dark); border: none;
+  border-radius: 8px; font-family: var(--font-display);
+  font-weight: 700; font-size: 14px; padding: 8px 20px; cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-nav-cta:hover { background: var(--yellow-dark); }
+.taxijul-navbar .navbar-toggler { border-color: rgba(255,255,255,0.3); }
+.taxijul-navbar .navbar-toggler-icon { filter: invert(1); }
+.nav-user-info {
+  display: flex; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.75); font-size: 14px;
+  font-family: var(--font-display);
+}
+.nav-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--yellow); color: var(--dark);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px;
+}
