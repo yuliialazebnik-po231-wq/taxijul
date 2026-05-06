@@ -26,7 +26,7 @@ const LoginPage = () => {
       <div className="auth-card">
         <div className="auth-header">
           <h2>Вхід в TaxiJul</h2>
-          <p>Увійди щоб замовити таксі</p>
+          <p>Увійди, щоб замовити таксі</p>
         </div>
         <form onSubmit={handleSubmit} className="auth-form">
 

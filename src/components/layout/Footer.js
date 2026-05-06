@@ -8,7 +8,6 @@ const Footer = () => (
       <a href="/rides">Мої поїздки</a>
       <a href="/profile">Профіль</a>
     </div>
-    <p className="footer-copy">2025 TaxiJul. Всі права захищено.</p>
   </footer>
 );
  
