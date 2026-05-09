@@ -13,15 +13,25 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       if (firebaseUser) {
-        setUser({
-          id: firebaseUser.uid,
-          name: firebaseUser.displayName || firebaseUser.email,
-          email: firebaseUser.email,
-          phone: '+38 099 123 45 67',
-          totalRides: 5,
-          memberSince: 'Квітень 2025',
-          rating: 4.9,
-        });
+       const creationTime = firebaseUser.metadata.creationTime;
+const date = new Date(creationTime);
+const memberSince = date.toLocaleDateString('uk-UA', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+
+setUser({
+  id: firebaseUser.uid,
+  uid: firebaseUser.uid,
+  name: firebaseUser.displayName || firebaseUser.email,
+  email: firebaseUser.email,
+  phone: '+38 099 123 45 67',
+  totalRides: 5,
+  memberSince,
+  rating: 4.9,
+});
+
       } else {
         setUser(null);
       }

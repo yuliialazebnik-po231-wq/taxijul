@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { db } from '../firebase';
-import { collection, query, where, onSnapshot } from 'firebase/firestore';
+import { mockRides } from '../data/rides';
 
 export const useRideHistory = (userId) => {
   const [rides, setRides]     = useState([]);
@@ -10,29 +9,15 @@ export const useRideHistory = (userId) => {
 
   useEffect(() => {
     if (!userId) { setLoading(false); return; }
-
     setLoading(true);
-    setError(null);
 
-    // Підписуємось на зміни в Firestore — оновлюється в реальному часі
-const q = query(
-  collection(db, 'rides'),
-  where('userId', '==', userId)
-);
-    const unsubscribe = onSnapshot(q,
-      (snapshot) => {
-        const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-        setRides(data);
-        setLoading(false);
-      },
-      (err) => {
-        setError('Не вдалося завантажити поїздки');
-        setLoading(false);
-      }
-    );
+    const timer = setTimeout(() => {
+     const userRides = mockRides;
+      setRides(userRides);
+      setLoading(false);
+    }, 800);
 
-    // Cleanup: відписуємось при розмонтуванні
-    return () => unsubscribe();
+    return () => clearTimeout(timer);
   }, [userId]);
 
   const filteredRides = filter === 'Всі'

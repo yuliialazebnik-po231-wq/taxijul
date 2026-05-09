@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { carClasses } from '../../data/mockData';
+import { carClasses } from '../../data/carClasses';
 import './styles/BookingForm.css';
  
 const BookingForm = ({ onSubmit }) => {

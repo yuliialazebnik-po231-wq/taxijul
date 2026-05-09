@@ -1,23 +1,24 @@
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { Car, Star, Clock } from 'lucide-react';
 import './styles/HomePage.css';
- 
+
 const features = [
-  { icon: 'car',   title: 'Швидке замовлення', desc: 'Таксі за 3 хвилини. Введи адресу — знайдемо найближчого водія.' },
-  { icon: 'star',  title: 'Перевірені водії',  desc: 'Рейтинг кожного водія. Лише ті, хто отримав понад 4.7 зірки.' },
-  { icon: 'clock', title: 'Будь-коли',          desc: 'Сервіс працює 24/7 — вдень, вночі та у свята.' },
+  { icon: <Car size={36} />,   title: 'Швидке замовлення', desc: 'Таксі за 3 хвилини. Введи адресу — знайдемо найближчого водія.' },
+  { icon: <Star size={36} />,  title: 'Перевірені водії',  desc: 'Рейтинг кожного водія. Лише ті, хто отримав понад 4.7 зірки.' },
+  { icon: <Clock size={36} />, title: 'Будь-коли',          desc: 'Сервіс працює 24/7 — вдень, вночі та у свята.' },
 ];
- 
+
 const HomePage = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
- 
+
   return (
     <div className="home-page">
- 
-      {/* Секція HERO — головний банер */}
+
       <section className="hero-section">
         <div className="hero-content">
+          <div className="hero-badge">🚖 Сервіс №1 в місті</div>
           <h1 className="hero-title">
             Твоє таксі <span className="hero-accent">тут і зараз</span>
           </h1>
@@ -34,13 +35,22 @@ const HomePage = () => {
               </button>
             )}
           </div>
+          <div className="hero-stats">
+            <div className="hero-stat"><strong>1 200+</strong><span>водіїв</span></div>
+            <div className="hero-stat-divider" />
+            <div className="hero-stat"><strong>50 000+</strong><span>поїздок</span></div>
+            <div className="hero-stat-divider" />
+            <div className="hero-stat"><strong>4.9 ★</strong><span>рейтинг</span></div>
+          </div>
         </div>
         <div className="hero-visual">
-          <div className="hero-car-emoji">taxi</div>
+          <div className="hero-illustration">
+            <div className="hero-car-wrap">🚖</div>
+            <div className="hero-glow" />
+          </div>
         </div>
       </section>
- 
-      {/* Секція FEATURES — переваги */}
+
       <section className="features-section">
         <div className="container-taxi">
           <h2 className="features-title">Чому TaxiJul?</h2>
@@ -55,8 +65,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
- 
-      {/* Заклик до дії */}
+
       <section className="cta-section">
         <h2>Готовий їхати?</h2>
         <p>Зареєструйся і отримай першу поїздку зі знижкою 20%</p>
@@ -64,9 +73,9 @@ const HomePage = () => {
           Почати
         </button>
       </section>
- 
+
     </div>
   );
 };
- 
+
 export default HomePage;

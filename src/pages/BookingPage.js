@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import BookingForm from '../components/booking/BookingForm';
 import DriverCard from '../components/booking/DriverCard';
-import { mockDrivers } from '../data/mockData';
+import { mockDrivers } from '../data/drivers';
 import { db } from '../firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import './styles/BookingPage.css';
