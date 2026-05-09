@@ -4,7 +4,7 @@ import { mockRides } from '../data/rides';
 export const useRideHistory = (userId) => {
   const [rides, setRides]     = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError]     = useState(null);
+const [error] = useState(null);
   const [filter, setFilter]   = useState('Всі');
 
   useEffect(() => {
