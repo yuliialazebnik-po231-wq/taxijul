@@ -41,7 +41,7 @@ const BookingPage = () => {
     try {
       // Зберігаємо поїздку в Firestore
       await addDoc(collection(db, 'rides'), {
-        userId: user.id,
+       userId: user.uid,
         from: formData.from,
         to: formData.to,
         carClass: formData.carClass,

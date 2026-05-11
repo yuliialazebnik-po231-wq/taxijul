@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { mockRides } from '../data/rides';
+import { db } from '../firebase';
+import { collection, query, where, onSnapshot } from 'firebase/firestore';
 
 export const useRideHistory = (userId) => {
   const [rides, setRides]     = useState([]);
@@ -9,15 +10,26 @@ const [error] = useState(null);
 
   useEffect(() => {
     if (!userId) { setLoading(false); return; }
+
     setLoading(true);
 
-    const timer = setTimeout(() => {
-     const userRides = mockRides;
-      setRides(userRides);
-      setLoading(false);
-    }, 800);
+    const q = query(
+      collection(db, 'rides'),
+      where('userId', '==', userId)
+    );
 
-    return () => clearTimeout(timer);
+    const unsubscribe = onSnapshot(q,
+      (snapshot) => {
+        const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        setRides(data);
+        setLoading(false);
+      },
+      () => {
+        setLoading(false);
+      }
+    );
+
+    return () => unsubscribe();
   }, [userId]);
 
   const filteredRides = filter === 'Всі'
