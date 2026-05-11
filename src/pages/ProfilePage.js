@@ -35,8 +35,8 @@ const ProfilePage = () => {
               <span className="p-stat-lbl">Рейтинг</span>
             </div>
             <div className="p-stat">
-              <span className="p-stat-val">1 рік</span>
-              <span className="p-stat-lbl">Стаж</span>
+            <span className="p-stat-val">{user.experience}</span>
+              <span className="p-stat-lbl">Досвід</span>
             </div>
           </div>
  
